@@ -1,0 +1,70 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.invite-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.half {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+.left-half {
+    left: 0;
+    background-color: #add8e6;
+}
+
+.right-half {
+    right: 0;
+    background-color: #90ee90;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    z-index: 0;
+    padding: 20px;
+}
+
+.toggle-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Left half open state */
+.left-half.open {
+    transform: translateX(-100%);
+}
+
+/* Right half open state */
+.right-half.open {
+    transform: translateX(100%);
+}
