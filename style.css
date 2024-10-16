@@ -33,7 +33,7 @@
 .second img, .third img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
 }
 
 /* Button to trigger the folding effect */
