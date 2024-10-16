@@ -52,11 +52,13 @@
 
 /* State when the quarters are open */
 .folded .second {
-    transform: rotateY(-180deg) translateX(-100%); /* Folds out to the left */
+    transform: rotateY(180deg); /* Flip the second quarter towards the user */
+    transform-origin: left; /* Set pivot point to the left edge */
 }
 
 .folded .third {
-    transform: rotateY(180deg) translateX(100%); /* Folds out to the right */
+    transform: rotateY(-180deg); /* Flip the third quarter towards the user */
+    transform-origin: right; /* Set pivot point to the right edge */
 }
 
 /* Add this new class to control the visibility of the top layer */
