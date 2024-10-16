@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #f0f0f0;
+    background-color: white;
     text-align: center;
     padding-top: 100px;
     z-index: 1; /* Keep it behind the top layer */
@@ -35,6 +35,7 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden; /* Hide the backside of the images during flip */
+    transition: visibility 0s 1.7s; /* Delay visibility change until background turns white */
 }
 
 /* Button to trigger the folding effect */
@@ -48,7 +49,7 @@
 
 /* Transition for the second quarter */
 .second {
-    transition: transform 1s ease, background-color 0s 1s; /* Transition for transform and background color */
+    transition: transform 5s ease-out; /* Color change occurs halfway through the flip */
 }
 
 /* State when the second quarter folds */
@@ -58,9 +59,22 @@
     background-color: white; /* Change to white during the flip */
 }
 
-/* Make the first quarter visible from the flip */
-.first {
-    background-color: #f0f0f0; /* Change color of the first quarter to show behind the second */
+/* Hide the image when the second quarter is folded */
+.folded .second img {
+    visibility: hidden; /* Hide the image after the flip */
+}
+
+
+
+/* Remove shadow on the first quarter when folded */
+.folded .first {
+   transform: rotateY(-1800deg); /* Add a slight rotation to create a folding effect */
+    transform-origin: right; /* Set pivot point to the right edge */
+}
+
+/* Add depth with a shadow effect on the first quarter */
+.second {
+    box-shadow: 1vw 1vw 2vw rgba(0,0,0,0.4); /* Shadow to create depth */
 }
 
 /* Add this new class to control the visibility of the top layer */
