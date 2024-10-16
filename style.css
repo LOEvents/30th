@@ -27,6 +27,7 @@
 .quarter {
     flex: 1;
     background-color: white;
+    perspective: 1000px; /* Add perspective for the 3D effect */
 }
 
 /* Style the images in the second and third quarters */
@@ -46,22 +47,16 @@
 
 /* Folding effect: initially keep the middle quarters visible */
 .second, .third {
-    transform-origin: center left; /* Rotates around the left edge for second */
     transition: transform 1s ease; /* Transition duration */
-}
-
-/* The third quarter folds from its right edge */
-.third {
-    transform-origin: center right; /* Rotates around the right edge for third */
 }
 
 /* State when the quarters are open */
 .folded .second {
-    transform: rotateY(-90deg) translateX(-100vw); /* Folds out to the left and moves off screen */
+    transform: rotateY(-180deg) translateX(-100%); /* Folds out to the left */
 }
 
 .folded .third {
-    transform: rotateY(90deg) translateX(100vw); /* Folds out to the right and moves off screen */
+    transform: rotateY(180deg) translateX(100%); /* Folds out to the right */
 }
 
 /* Add this new class to control the visibility of the top layer */
