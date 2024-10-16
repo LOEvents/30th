@@ -9,5 +9,5 @@ document.getElementById('foldButton').addEventListener('click', function() {
         if (topLayer.classList.contains('folded')) {
             topLayer.classList.add('hidden'); // Add the hidden class to remove it
         }
-    }, 1000); // Match this time with the transition duration in CSS
+    }, 5000); // Match this time with the transition duration in CSS
 });
