@@ -48,7 +48,7 @@
 
 /* Transition for the second quarter */
 .second {
-    transition: transform 1s ease; /* Transition for transform */
+    transition: transform 1s ease, background-color 0s 1s; /* Transition for transform and background color */
 }
 
 /* State when the second quarter folds */
