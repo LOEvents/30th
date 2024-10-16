@@ -30,10 +30,11 @@
     perspective: 1000px; /* Add perspective for the 3D effect */
 }
 
-/* Style the images in the second and third quarters */
-.second img, .third img {
+/* Style the images in the second quarter */
+.second img {
     width: 100%;
     height: 100%;
+    backface-visibility: hidden; /* Hide the backside of the images during flip */
 }
 
 /* Button to trigger the folding effect */
@@ -45,20 +46,21 @@
     z-index: 3; /* On top of everything */
 }
 
-/* Folding effect: initially keep the middle quarters visible */
-.second, .third {
-    transition: transform 1s ease; /* Transition duration */
+/* Transition for the second quarter */
+.second {
+    transition: transform 1s ease; /* Transition for transform */
 }
 
-/* State when the quarters are open */
+/* State when the second quarter folds */
 .folded .second {
-    transform: rotateY(180deg); /* Flip the second quarter towards the user */
-    transform-origin: left; /* Set pivot point to the left edge */
+    transform: rotateY(-180deg); /* Flip the second quarter towards the user */
+    transform-origin: left; /* Set pivot point to the left edge (middle of first half) */
+    background-color: white; /* Change to white during the flip */
 }
 
-.folded .third {
-    transform: rotateY(-180deg); /* Flip the third quarter towards the user */
-    transform-origin: right; /* Set pivot point to the right edge */
+/* Make the first quarter visible from the flip */
+.first {
+    background-color: #f0f0f0; /* Change color of the first quarter to show behind the second */
 }
 
 /* Add this new class to control the visibility of the top layer */
