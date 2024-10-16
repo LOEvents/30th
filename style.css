@@ -1,63 +1,72 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
 .container {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
 .layer-top {
+  position: relative;
   display: flex;
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2; /* This layer is on top */
-  transition: opacity 0.3s ease;
+  transition: transform 1s ease;
 }
 
 .quarter {
   width: 25%;
   height: 100%;
-  background-color: lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.first, .fourth {
+  background-color: white;
 }
 
 .second, .third {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: lightgray;
 }
 
-img {
+.second img, .third img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Use this to maintain aspect ratio */
 }
 
 .layer-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: #f0f0f0;
-  display: flex;
+  background-color: white;
+  display: none; /* Hidden initially */
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  z-index: 1; /* This layer is below */
+  text-align: center;
 }
 
-.hidden {
-  display: none;
+.opened .layer-bottom {
+  display: flex; /* Show when opened */
 }
 
-@keyframes foldOutLeft {
-  0% { transform: translateX(0) rotateY(0deg); }
-  100% { transform: translateX(-100%) rotateY(-90deg); }
+.opened .layer-top {
+  transform: translateX(-100%); /* Move out to the left */
 }
 
-@keyframes foldOutRight {
-  0% { transform: translateX(0) rotateY(0deg); }
-  100% { transform: translateX(100%) rotateY(90deg); }
+.opened .second {
+  transform: rotateY(-180deg); /* Fold out */
+}
+
+.opened .third {
+  transform: rotateY(180deg); /* Fold out */
 }
