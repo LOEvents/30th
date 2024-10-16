@@ -1,66 +1,63 @@
-/* Fullscreen content that's beneath the top layer */
-.bottom-content {
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.layer-top {
+  display: flex;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2; /* This layer is on top */
+  transition: opacity 0.3s ease;
+}
+
+.quarter {
+  width: 25%;
+  height: 100%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second, .third {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.layer-bottom {
   width: 100%;
   height: 100%;
   background-color: #f0f0f0;
-  text-align: center;
-  padding-top: 100px;
-  z-index: 1; /* Keep it behind the top layer */
-}
-
-/* Top layer covering the bottom layer initially */
-.top-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: row; /* Now we split horizontally */
-  z-index: 2; /* On top of the bottom content */
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 1; /* This layer is below */
 }
 
-/* Each quarter occupies 25% of the screen width */
-.quarter {
-  flex: 1;
-  background-color: white;
+.hidden {
+  display: none;
 }
 
-/* Style the images in the second and third quarters */
-.second img, .third img {
-  width: 100%;
-  height: 100%;
-
+@keyframes foldOutLeft {
+  0% { transform: translateX(0) rotateY(0deg); }
+  100% { transform: translateX(-100%) rotateY(-90deg); }
 }
 
-/* Button to trigger the folding effect */
-#foldButton {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3; /* On top of everything */
-}
-
-/* Folding effect: initially keep the middle quarters visible */
-.second, .third {
-  transform-origin: center left; /* Rotates around the left edge for second */
-  transition: transform 1s ease;
-}
-
-/* The third quarter folds from its right edge */
-.third {
-  transform-origin: center right;
-}
-
-/* State when the quarters are open */
-.folded .second {
-  transform: rotateY(-90deg); /* Folds out to the left */
-}
-
-.folded .third {
-  transform: rotateY(90deg); /* Folds out to the right */
+@keyframes foldOutRight {
+  0% { transform: translateX(0) rotateY(0deg); }
+  100% { transform: translateX(100%) rotateY(90deg); }
 }
