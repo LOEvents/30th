@@ -1,5 +1,4 @@
 document.getElementById('foldButton').addEventListener('click', function() {
-    // Toggle a class on the top layer when the button is clicked
     const topLayer = document.querySelector('.top-layer');
     
     // Add the folded class to trigger the animation
