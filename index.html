@@ -1,27 +1,16 @@
-<body>
-  <!-- Bottom layer content (this will be revealed after the fold) -->
-  <div class="bottom-content">
-    <!-- Put your main content here -->
-    <h1>Welcome to the Invite!</h1>
-    <p>Details about the event...</p>
-  </div>
-
-  <!-- Top layer with quarters -->
-  <div class="top-layer">
+<div class="container">
+  <div class="layer-top">
     <div class="quarter first"></div>
     <div class="quarter second">
-      <img src="assets/image1.jpg" alt="Image 1">
+      <img src="path-to-your-image2.jpg" alt="Image in second quarter">
     </div>
     <div class="quarter third">
-      <img src="assets/image2.jpg" alt="Image 2">
+      <img src="path-to-your-image3.jpg" alt="Image in third quarter">
     </div>
     <div class="quarter fourth"></div>
   </div>
-
-  <!-- Button to fold open the middle sections -->
-  <button id="foldButton">Open</button>
-
-  <!-- Linking external JS and CSS -->
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="style.css">
-</body>
+  <div class="layer-bottom">
+    <h1>Welcome to the hidden content!</h1>
+  </div>
+  <button id="openButton">Open</button>
+</div>
