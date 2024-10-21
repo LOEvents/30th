@@ -29,9 +29,11 @@
     background-color: white;
     perspective: 1000px; /* Add perspective for the 3D effect */
 }
-
+.first, .fourth{
+    background-color: #eaeaea;
+}
 /* Style the images in the second quarter */
-.second img {
+.second img, .third img {
     width: 100%;
     height: 100%;
     backface-visibility: hidden; /* Hide the backside of the images during flip */
@@ -43,13 +45,12 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 3; /* On top of everything */
 }
 
 /* Transition for the second quarter */
-.second {
-    transition: transform 5s ease-out; /* Color change occurs halfway through the flip */
+.second, .third {
+    transition: transform 3s ease-out; /* Color change occurs halfway through the flip */
 }
 
 /* State when the second quarter folds */
@@ -58,23 +59,25 @@
     transform-origin: left; /* Set pivot point to the left edge (middle of first half) */
     background-color: white; /* Change to white during the flip */
 }
+.folded .third {
+    transform: rotateY(180deg); /* Flip the second quarter towards the user */
+    transform-origin: right; /* Set pivot point to the left edge (middle of first half) */
+    background-color: white; /* Change to white during the flip */
+    z-index: 3;
+}
 
 /* Hide the image when the second quarter is folded */
-.folded .second img {
+.folded .second img, .folded .third img {
     visibility: hidden; /* Hide the image after the flip */
 }
 
-
-
-/* Remove shadow on the first quarter when folded */
-.folded .first {
-   transform: rotateY(-1800deg); /* Add a slight rotation to create a folding effect */
-    transform-origin: right; /* Set pivot point to the right edge */
-}
-
-/* Add depth with a shadow effect on the first quarter */
+/* Add depth with a shadow effect on the second quarter */
 .second {
     box-shadow: 1vw 1vw 2vw rgba(0,0,0,0.4); /* Shadow to create depth */
+}
+/* Add depth with a shadow effect on the third quarter */
+.folded .third {
+    box-shadow: -1vw 1vw 2vw rgba(0,0,0,0.4); /* Shadow to create depth */
 }
 
 /* Add this new class to control the visibility of the top layer */
