@@ -44,7 +44,7 @@
     object-position: 10%; /* Moves the image horizontally */
 }
 .third img{
-    object-position: 0%; /* Moves the image horizontally */
+    object-position: 10%; /* Moves the image horizontally */
 }
 
 /* Button to trigger the folding effect */
