@@ -24,7 +24,7 @@
 }
 
 /* Each quarter occupies 25% of the screen width */
-.half {
+.quarter {
     flex: 1;
     background-color: white;
     perspective: 1000px; /* Add perspective for the 3D effect */
@@ -38,13 +38,6 @@
     height: 100%;
     backface-visibility: hidden; /* Hide the backside of the images during flip */
     transition: visibility 0s 1s; /* Delay visibility change until background turns white */
-    object-fit:cover;
-}
-.second img{
-    object-position: 10%; /* Moves the image horizontally */
-}
-.third img{
-    object-position: 10%; /* Moves the image horizontally */
 }
 
 /* Button to trigger the folding effect */
