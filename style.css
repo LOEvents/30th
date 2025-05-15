@@ -7,7 +7,6 @@
     height: 100%;
     background-color: white;
     text-align: center;
-    padding-top: 100px;
     z-index: 1; /* Keep it behind the top layer */
 }
 
@@ -84,4 +83,10 @@
 /* Add this new class to control the visibility of the top layer */
 .hidden {
     display: none; /* Hide the top layer after animation */
+}
+
+.annecy_map{
+    width: 100%;
+    height: auto;
+    display: block; /* removes any unwanted gaps */
 }
