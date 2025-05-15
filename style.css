@@ -90,3 +90,28 @@
     height: auto;
     display: block; /* removes any unwanted gaps */
 }
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+#foldButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+
+    padding: 12px 24px;
+    background-color: #fdf6e3; /* soft cream color */
+    color: #333;
+    border: 2px dashed #666;
+    border-radius: 10px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#foldButton:hover {
+    background-color: #fceeb5;
+    transform: translate(-50%, -50%) scale(1.05);
+}
